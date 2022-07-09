@@ -1,0 +1,15 @@
+<p>Go!</p>
+<button (click)="toggleContent($event)">{{buttonTitle}}</button>
+
+
+<div *ngIf="showContent">
+<ul *ngFor="let book of books">
+    <li *ngIf="book.price > 1 && book.title.length > 1; else noBooks">
+            {{book.title}}: {{book.price}}     
+    </li>
+</ul>
+
+<ng-template #noBooks>
+    <p>There are no books here!</p> 
+</ng-template>
+</div>
